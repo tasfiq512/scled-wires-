@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Scaled Wires</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            color: #1a1a1a;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem;
+            border: 1px solid #e8e8e8;
+            border-radius: 0;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            box-shadow: none;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            padding: 1rem 2.5rem;
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            border-radius: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            background: #333;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-item h3 {
+            color: #1a1a1a;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: #777;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .contact-item a {
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">⬡ SCALED WIRES</a></div>
+                <ul class="nav-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="expertise.html">Expertise</a></li>
+                    <li><a href="contact.html" class="btn-cta">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero with Image Section -->
+    <section class="hero" style="margin-top: 80px; padding: 6rem 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div>
+                    <h1 style="font-size: 3.5rem; margin-bottom: 2rem; color: #1a1a1a; font-weight: 600;">Let's Work Together</h1>
+                    <p style="font-size: 1.2rem; color: #777; margin-bottom: 3rem; font-weight: 400; line-height: 1.9;">We're here to help and answer any question you might have. Reach out to us and let's start your transformation journey today.</p>
+                </div>
+                <div style="height: 400px; border-radius: 0; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&h=400&fit=crop" alt="Contact" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section style="padding: 4rem 0; background: white; border-bottom: 1px solid #e8e8e8;">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h2 style="font-size: 2rem; color: #1a1a1a; margin-bottom: 1.5rem; font-weight: 600;">Send us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h2 style="font-size: 2rem; color: #1a1a1a; margin-bottom: 1rem; font-weight: 600;">Contact Information</h2>
+
+                    <div class="contact-item">
+                        <h3>📞 Phone</h3>
+                        <p><a href="tel:+8801326884138">+880 1326 884138</a></p>
+                        <p style="margin-top: 0.5rem;">Available Mon-Fri, 9:00 AM - 6:00 PM EST</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>📧 Email</h3>
+                        <p><a href="mailto:shahriar.abir884@gmail.com">shahriar.abir884@gmail.com</a></p>
+                        <p style="margin-top: 0.5rem;">We'll respond within 24 hours</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>📍 Address</h3>
+                        <p>Holding 3289, Road 68, Block L, Bashundhara R/A,<br>
+                        Dhaka 1229</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>🕐 Business Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM EST<br>
+                        Saturday - Sunday: Closed</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>🌐 Social Media</h3>
+                        <p style="margin-top: 1rem;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding: 6rem 0; background: white; border-top: 1px solid #e8e8e8;">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Quick answers to common questions</p>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="border-bottom: 1px solid #e8e8e8; padding: 2rem 0;">
+                    <h3 style="color: #1a1a1a; font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem;">What is your typical project timeline?</h3>
+                    <p style="color: #777; font-weight: 300; line-height: 1.8;">Project timelines vary based on complexity, but most projects are delivered within 3-6 months. We'll provide a detailed timeline during our initial consultation.</p>
+                </div>
+
+                <div style="border-bottom: 1px solid #e8e8e8; padding: 2rem 0;">
+                    <h3 style="color: #1a1a1a; font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem;">Do you offer ongoing support after launch?</h3>
+                    <p style="color: #777; font-weight: 300; line-height: 1.8;">Yes! We provide 24/7 support including maintenance, updates, and optimization. Support packages can be customized to your needs.</p>
+                </div>
+
+                <div style="border-bottom: 1px solid #e8e8e8; padding: 2rem 0;">
+                    <h3 style="color: #1a1a1a; font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem;">What is your pricing model?</h3>
+                    <p style="color: #777; font-weight: 300; line-height: 1.8;">We offer flexible pricing including fixed-price projects, time & materials, and retainer models. We'll work with you to find the best fit for your budget.</p>
+                </div>
+
+                <div style="padding: 2rem 0;">
+                    <h3 style="color: #1a1a1a; font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem;">How do we get started?</h3>
+                    <p style="color: #777; font-weight: 300; line-height: 1.8;">Simply fill out the contact form above or give us a call. We'll schedule a free consultation to understand your needs and discuss how we can help.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>Scaled Wires is your trusted partner for comprehensive digital solutions and sustainable business growth.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="solutions.html">BPO Services</a></li>
+                        <li><a href="solutions.html">ATL / BTL Marketing</a></li>
+                        <li><a href="solutions.html">Web Development</a></li>
+                        <li><a href="solutions.html">Mobile Apps</a></li>
+                        <li><a href="solutions.html">Software Development</a></li>
+                        <li><a href="solutions.html">Sales Solutions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="expertise.html">Expertise</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="footer-contact">
+                        <p>📧 shahriar.abir884@gmail.com</p>
+                        <p>📞 +880 1326 884138</p>
+                        <p>📍 Holding 3289, Road 68, Block L, Bashundhara R/A</p>
+                        <p>🕐 Mon-Fri: 9:00 AM - 6:00 PM EST</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Scaled Wires. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
