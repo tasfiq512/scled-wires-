@@ -3,892 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Scaled Wires</title>
+    <title>About - Scaled Wires</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .about-page {
-            background:
-                radial-gradient(circle at top left, rgba(26, 26, 26, 0.05), transparent 32%),
-                linear-gradient(180deg, #ffffff 0%, #f7f7f5 100%);
-        }
-
-        .about-hero {
-            margin-top: 80px;
-            padding: 8rem 0 5rem;
-            border-bottom: 1px solid #e8e8e8;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(135deg, rgba(26, 26, 26, 0.03), transparent 45%),
-                radial-gradient(circle at right center, rgba(26, 26, 26, 0.08), transparent 38%);
-            pointer-events: none;
-        }
-
-        .about-hero-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .eyebrow {
-            display: inline-block;
-            margin-bottom: 1.25rem;
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.22rem;
-            text-transform: uppercase;
-            color: #666;
-        }
-
-        .about-hero-copy h1 {
-            font-size: 4rem;
-            line-height: 1.05;
-            letter-spacing: -0.08rem;
-            margin-bottom: 1.5rem;
-            color: #111;
-        }
-
-        .about-hero-copy p {
-            max-width: 640px;
-            font-size: 1.08rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
-
-        .about-hero-actions {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2.5rem;
-        }
-
-        .mini-stats {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1rem;
-            max-width: 650px;
-        }
-
-        .mini-stat {
-            padding: 1.25rem 1.4rem;
-            background: rgba(255, 255, 255, 0.85);
-            border: 1px solid #e8e8e8;
-            backdrop-filter: blur(8px);
-        }
-
-        .mini-stat strong {
-            display: block;
-            font-size: 2rem;
-            line-height: 1;
-            color: #111;
-            margin-bottom: 0.45rem;
-        }
-
-        .mini-stat span {
-            color: #777;
-            font-size: 0.95rem;
-        }
-
-        .about-hero-visual {
-            position: relative;
-            min-height: 580px;
-        }
-
-        .hero-card-main,
-        .hero-card-accent {
-            position: absolute;
-            overflow: hidden;
-            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-card-main {
-            inset: 0 0 60px 60px;
-        }
-
-        .hero-card-main img,
-        .hero-card-accent img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .hero-card-accent {
-            width: 230px;
-            height: 260px;
-            left: 0;
-            bottom: 0;
-            border: 12px solid #f7f7f5;
-        }
-
-        .hero-note {
-            position: absolute;
-            right: 24px;
-            bottom: 24px;
-            padding: 1.2rem 1.4rem;
-            max-width: 230px;
-            background: rgba(17, 17, 17, 0.92);
-            color: #fff;
-        }
-
-        .hero-note strong {
-            display: block;
-            font-size: 1.5rem;
-            margin-bottom: 0.35rem;
-        }
-
-        .story-section,
-        .values-section,
-        .timeline-section,
-        .leadership-section,
-        .team-section {
-            padding: 6rem 0;
-            border-bottom: 1px solid #e8e8e8;
-        }
-
-        .story-layout {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(320px, 0.85fr);
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .story-panel {
-            padding: 2rem;
-            background: #fff;
-            border: 1px solid #e8e8e8;
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.04);
-        }
-
-        .story-panel h2,
-        .section-heading h2 {
-            font-size: 2.8rem;
-            line-height: 1.05;
-            letter-spacing: -0.05rem;
-            margin-bottom: 1.25rem;
-            color: #111;
-        }
-
-        .story-panel p,
-        .section-heading p {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .story-aside {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .aside-card {
-            padding: 1.6rem;
-            border: 1px solid #e8e8e8;
-            background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
-        }
-
-        .aside-card strong {
-            display: block;
-            margin-bottom: 0.55rem;
-            color: #111;
-            font-size: 1.1rem;
-        }
-
-        .aside-card p {
-            color: #777;
-            margin: 0;
-            font-size: 0.96rem;
-        }
-
-        .section-heading {
-            max-width: 700px;
-            margin-bottom: 3rem;
-        }
-
-        .values-grid,
-        .leaders-grid,
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 1.4rem;
-        }
-
-        .value-card,
-        .leader-card,
-        .team-card {
-            padding: 2rem;
-            background: #fff;
-            border: 1px solid #e8e8e8;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-        }
-
-        .value-card:hover,
-        .leader-card:hover,
-        .team-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.07);
-            border-color: #1a1a1a;
-        }
-
-        .value-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 46px;
-            height: 46px;
-            margin-bottom: 1rem;
-            background: #111;
-            color: #fff;
-            font-weight: 700;
-        }
-
-        .value-card h3,
-        .leader-card h3,
-        .team-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.85rem;
-            color: #111;
-        }
-
-        .value-card p,
-        .leader-card p,
-        .team-card p {
-            color: #777;
-            margin: 0;
-        }
-
-        .timeline {
-            position: relative;
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 118px;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: #d8d8d8;
-        }
-
-        .timeline-item {
-            position: relative;
-            display: grid;
-            grid-template-columns: 90px 1fr;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        .timeline-year {
-            position: relative;
-            padding-top: 0.2rem;
-            font-size: 0.92rem;
-            font-weight: 700;
-            letter-spacing: 0.16rem;
-            color: #777;
-            text-transform: uppercase;
-        }
-
-        .timeline-year::after {
-            content: "";
-            position: absolute;
-            top: 0.6rem;
-            left: 98px;
-            width: 12px;
-            height: 12px;
-            background: #111;
-        }
-
-        .timeline-card {
-            padding: 1.7rem 1.8rem;
-            background: #fff;
-            border: 1px solid #e8e8e8;
-            margin-left: 0.9rem;
-        }
-
-        .timeline-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.7rem;
-            color: #111;
-        }
-
-        .timeline-card p {
-            color: #777;
-            margin: 0;
-        }
-
-        .leader-role {
-            display: inline-block;
-            margin-bottom: 1rem;
-            color: #666;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.12rem;
-            text-transform: uppercase;
-        }
-
-        .team-section {
-            background: linear-gradient(180deg, #111111 0%, #1b1b1b 100%);
-            color: #fff;
-        }
-
-        .team-section .section-heading h2,
-        .team-section .section-heading p {
-            color: #fff;
-        }
-
-        .team-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .team-card {
-            padding: 0;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(255, 255, 255, 0.12);
-        }
-
-        .team-card:hover {
-            border-color: rgba(255, 255, 255, 0.28);
-        }
-
-        .team-photo {
-            aspect-ratio: 1 / 1;
-            overflow: hidden;
-            background: #222;
-        }
-
-        .team-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            display: block;
-            transition: transform 0.35s ease;
-        }
-
-        .team-photo img.team-photo-ceo {
-            object-position: center 22%;
-        }
-
-        .team-card:hover .team-photo img {
-            transform: scale(1.04);
-        }
-
-        .team-content {
-            padding: 1.7rem;
-        }
-
-        .team-role {
-            display: inline-block;
-            margin-bottom: 0.8rem;
-            color: rgba(255, 255, 255, 0.72);
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.12rem;
-            text-transform: uppercase;
-        }
-
-        .team-card h3 {
-            color: #fff;
-            margin-bottom: 0.75rem;
-        }
-
-        .team-card p {
-            color: rgba(255, 255, 255, 0.72);
-        }
-
-        .about-cta {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #f7f7f5 0%, #ffffff 100%);
-            text-align: center;
-        }
-
-        .about-cta-box {
-            padding: 3rem;
-            background: #fff;
-            border: 1px solid #e8e8e8;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
-        }
-
-        .about-cta-box h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #111;
-        }
-
-        .about-cta-box p {
-            max-width: 680px;
-            margin: 0 auto 2rem;
-            color: #666;
-        }
-
-        @media (max-width: 1100px) {
-            .about-hero-grid,
-            .story-layout,
-            .values-grid,
-            .leaders-grid,
-            .team-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .about-hero-grid,
-            .story-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .about-hero-copy h1 {
-                font-size: 3.2rem;
-            }
-
-            .about-hero-visual {
-                min-height: 500px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .about-hero {
-                padding: 6.5rem 0 4rem;
-            }
-
-            .about-hero-copy h1,
-            .story-panel h2,
-            .section-heading h2,
-            .about-cta-box h2 {
-                font-size: 2.3rem;
-            }
-
-            .mini-stats,
-            .values-grid,
-            .leaders-grid,
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-hero-visual {
-                min-height: 420px;
-            }
-
-            .hero-card-main {
-                inset: 0 0 40px 40px;
-            }
-
-            .hero-card-accent {
-                width: 170px;
-                height: 190px;
-            }
-
-            .timeline::before {
-                left: 78px;
-            }
-
-            .timeline-item {
-                grid-template-columns: 60px 1fr;
-                gap: 1.2rem;
-            }
-
-            .timeline-year::after {
-                left: 68px;
-            }
-
-            .timeline-card {
-                margin-left: 0.5rem;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .about-hero {
-                margin-top: 120px;
-                padding-top: 3.5rem;
-            }
-
-            .about-hero-copy h1,
-            .story-panel h2,
-            .section-heading h2,
-            .about-cta-box h2 {
-                font-size: 1.95rem;
-            }
-
-            .story-section,
-            .values-section,
-            .timeline-section,
-            .leadership-section,
-            .team-section {
-                padding: 4rem 0;
-            }
-
-            .story-panel,
-            .value-card,
-            .leader-card,
-            .team-card,
-            .about-cta-box {
-                padding: 1.5rem;
-            }
-
-            .team-card {
-                padding: 0;
-            }
-
-            .team-content {
-                padding: 1.35rem;
-            }
-
-            .about-hero-visual {
-                min-height: 360px;
-            }
-
-            .hero-card-main {
-                inset: 0 0 32px 24px;
-            }
-
-            .hero-card-accent {
-                width: 130px;
-                height: 150px;
-                border-width: 8px;
-            }
-
-            .hero-note {
-                right: 12px;
-                bottom: 12px;
-                padding: 0.9rem 1rem;
-                max-width: 180px;
-            }
-
-            .timeline::before {
-                display: none;
-            }
-
-            .timeline-item {
-                grid-template-columns: 1fr;
-                gap: 0.8rem;
-            }
-
-            .timeline-year::after {
-                display: none;
-            }
-
-            .timeline-card {
-                margin-left: 0;
-            }
-
-            .about-hero-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-        }
-    </style>
 </head>
-<body class="about-page">
+<body>
     <header>
         <div class="container">
             <nav>
-                <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">SCALED WIRES</a></div>
+                <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true">SW</span><span class="logo-text">Scaled Wires</span></a>
                 <ul class="nav-links">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="about.html">About</a></li>
                     <li><a href="expertise.html">Expertise</a></li>
-                    <li><a href="contact.html" class="btn-cta">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="about-hero">
-        <div class="container">
-            <div class="about-hero-grid">
-                <div class="about-hero-copy scroll-animation">
-                    <span class="eyebrow">About Scaled Wires</span>
-                    <h1>Building modern growth systems for ambitious brands.</h1>
-                    <p>Scaled Wires blends strategy, technology, and execution into one focused partner. We help businesses simplify complexity, launch with confidence, and keep scaling with systems that are built to last.</p>
-                    <div class="about-hero-actions">
-                        <a class="btn btn-primary" href="contact.html">Start a Conversation</a>
-                        <a class="btn btn-secondary" href="solutions.html">Explore Our Solutions</a>
-                    </div>
-                    <div class="mini-stats">
-                        <div class="mini-stat">
-                            <strong>150+</strong>
-                            <span>projects delivered across service lines</span>
+    <main>
+        <section class="hero section">
+            <div class="container">
+                <span class="eyebrow">About Scaled Wires</span>
+                <h1>A focused team built for consistent execution.</h1>
+                <p>We combine strategic planning, delivery discipline, and day-to-day partnership so growth work keeps moving without operational chaos.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-head scroll-animation">
+                    <h2>How we operate</h2>
+                    <p>Our model is simple: clear ownership, transparent updates, and measurable outcomes.</p>
+                </div>
+                <div class="grid-3">
+                    <article class="card scroll-animation">
+                        <h3>Strategy with context</h3>
+                        <p>We work directly from business goals, not generic templates.</p>
+                    </article>
+                    <article class="card scroll-animation">
+                        <h3>Delivery without noise</h3>
+                        <p>Weekly execution rhythm keeps priorities aligned and blockers visible.</p>
+                    </article>
+                    <article class="card scroll-animation">
+                        <h3>Long-term support</h3>
+                        <p>Post-launch optimization and operational support are part of the engagement.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-head scroll-animation">
+                    <h2>Our Team</h2>
+                    <p>A leadership group aligned around execution quality, client trust, and sustainable growth.</p>
+                </div>
+                <div class="team-grid">
+                    <article class="team-card scroll-animation">
+                        <img class="team-photo team-photo-ceo" src="photos/S M Shahriar Minhaj — CEO.jpeg" alt="S M Shahriar Minhaj">
+                        <div class="team-body">
+                            <span class="team-role">CEO</span>
+                            <h3>S M Shahriar Minhaj</h3>
+                            <p>Leads company direction, strategy, and long-term growth planning.</p>
                         </div>
-                        <div class="mini-stat">
-                            <strong>15+</strong>
-                            <span>years shaping digital operations</span>
+                    </article>
+                    <article class="team-card scroll-animation">
+                        <img class="team-photo" src="photos/Faysal Ahmed Apu — COO.jpeg" alt="Faysal Ahmed Apu">
+                        <div class="team-body">
+                            <span class="team-role">COO</span>
+                            <h3>Faysal Ahmed Apu</h3>
+                            <p>Drives operations, delivery flow, and internal execution systems.</p>
                         </div>
-                        <div class="mini-stat">
-                            <strong>24/7</strong>
-                            <span>support for fast-moving teams</span>
+                    </article>
+                    <article class="team-card scroll-animation">
+                        <img class="team-photo" src="photos/Tasfiq Jahid — CFO.png" alt="Tasfiq Jahid">
+                        <div class="team-body">
+                            <span class="team-role">CFO</span>
+                            <h3>Tasfiq Jahid</h3>
+                            <p>Oversees financial planning, budgeting, and sustainable business health.</p>
                         </div>
-                    </div>
-                </div>
-                <div class="about-hero-visual scroll-animation">
-                    <div class="hero-card-main">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&h=1100&fit=crop" alt="Scaled Wires team collaboration">
-                    </div>
-                    <div class="hero-card-accent">
-                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&h=600&fit=crop" alt="Modern workspace">
-                    </div>
-                    <div class="hero-note">
-                        <strong>Strategy + Delivery</strong>
-                        <span>One team that can plan, build, launch, and support.</span>
-                    </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="story-section">
-        <div class="container">
-            <div class="story-layout">
-                <div class="story-panel scroll-animation">
-                    <span class="eyebrow">Our Story</span>
-                    <h2>We turn fragmented digital work into clear momentum.</h2>
-                    <p>Scaled Wires was built around a simple belief: businesses grow faster when strategy and execution stop fighting each other. Too many teams are forced to juggle agencies, freelancers, disconnected vendors, and slow-moving systems.</p>
-                    <p>We stepped in to close that gap. Our work brings together operations, creative thinking, technical delivery, and customer-facing execution so clients can move from idea to measurable impact without the usual drag.</p>
-                    <p>That means fewer handoffs, sharper decisions, and solutions that are designed around business outcomes instead of isolated deliverables.</p>
-                </div>
-                <div class="story-aside scroll-animation">
-                    <div class="aside-card">
-                        <strong>Mission</strong>
-                        <p>Help businesses scale with practical digital systems that feel clear, modern, and dependable.</p>
-                    </div>
-                    <div class="aside-card">
-                        <strong>Vision</strong>
-                        <p>Become the trusted growth partner for companies that want execution quality without enterprise-level friction.</p>
-                    </div>
-                    <div class="aside-card">
-                        <strong>How We Work</strong>
-                        <p>We stay close to the problem, move quickly, and build with enough rigor that the work remains useful long after launch.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="values-section">
-        <div class="container">
-            <div class="section-heading scroll-animation">
-                <span class="eyebrow">What Drives Us</span>
-                <h2>The principles behind every engagement.</h2>
-                <p>Our clients rely on us not just for output, but for clarity, follow-through, and decisions that hold up under growth.</p>
-            </div>
-            <div class="values-grid">
-                <div class="value-card scroll-animation">
-                    <span class="value-number">01</span>
-                    <h3>Business-first thinking</h3>
-                    <p>We anchor design and technical decisions in revenue, efficiency, experience, and long-term adaptability.</p>
-                </div>
-                <div class="value-card scroll-animation">
-                    <span class="value-number">02</span>
-                    <h3>Precision in delivery</h3>
-                    <p>Clear scope, strong communication, and disciplined execution keep projects moving without unnecessary noise.</p>
-                </div>
-                <div class="value-card scroll-animation">
-                    <span class="value-number">03</span>
-                    <h3>Partnership over handoff</h3>
-                    <p>We work like an extension of your team, staying engaged beyond launch to keep momentum alive.</p>
-                </div>
-                <div class="value-card scroll-animation">
-                    <span class="value-number">04</span>
-                    <h3>Built to scale</h3>
-                    <p>Every solution is shaped for growth, so the next stage of the business does not require starting over.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="timeline-section">
-        <div class="container">
-            <div class="section-heading scroll-animation">
-                <span class="eyebrow">Our Journey</span>
-                <h2>Growth shaped by real client needs.</h2>
-                <p>Scaled Wires expanded by responding to the kinds of problems ambitious teams actually face as they grow.</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item scroll-animation">
-                    <div class="timeline-year">Early Years</div>
-                    <div class="timeline-card">
-                        <h3>Started with focused delivery support</h3>
-                        <p>We began by helping businesses fix operational gaps and launch digital work faster with dependable execution.</p>
-                    </div>
-                </div>
-                <div class="timeline-item scroll-animation">
-                    <div class="timeline-year">Expansion</div>
-                    <div class="timeline-card">
-                        <h3>Broadened into multi-service transformation</h3>
-                        <p>As client needs evolved, we expanded into marketing, development, sales support, and process-led digital systems.</p>
-                    </div>
-                </div>
-                <div class="timeline-item scroll-animation">
-                    <div class="timeline-year">Today</div>
-                    <div class="timeline-card">
-                        <h3>Operating as an end-to-end growth partner</h3>
-                        <p>We now support brands with integrated solutions that connect strategy, operations, and delivery into one clear engine.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="leadership-section">
-        <div class="container">
-            <div class="section-heading scroll-animation">
-                <span class="eyebrow">Leadership Mindset</span>
-                <h2>The kind of team clients count on.</h2>
-                <p>We bring together operators, builders, and problem-solvers who care deeply about quality and momentum.</p>
-            </div>
-            <div class="leaders-grid">
-                <div class="leader-card scroll-animation">
-                    <span class="leader-role">Strategic Leads</span>
-                    <h3>See the bigger picture</h3>
-                    <p>We connect daily execution to the metrics, priorities, and constraints that matter most to your business.</p>
-                </div>
-                <div class="leader-card scroll-animation">
-                    <span class="leader-role">Technical Experts</span>
-                    <h3>Build with confidence</h3>
-                    <p>From web platforms to internal systems, we create work that is stable, maintainable, and ready for growth.</p>
-                </div>
-                <div class="leader-card scroll-animation">
-                    <span class="leader-role">Delivery Partners</span>
-                    <h3>Keep projects moving</h3>
-                    <p>Our process favors transparency, steady communication, and fast resolution when priorities shift.</p>
-                </div>
-                <div class="leader-card scroll-animation">
-                    <span class="leader-role">Support Teams</span>
-                    <h3>Stay present after launch</h3>
-                    <p>We support optimization, iteration, and daily reliability so clients are never left with a disconnected handoff.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="team-section">
-        <div class="container">
-            <div class="section-heading scroll-animation">
-                <span class="eyebrow">Our Team</span>
-                <h2>Meet the leadership behind Scaled Wires.</h2>
-                <p>A focused team guiding strategy, operations, and financial direction across every stage of growth.</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-card scroll-animation">
-                    <div class="team-photo">
-                        <img class="team-photo-ceo" src="photos/S M Shahriar Minhaj — CEO.jpeg" alt="S M Shahriar Minhaj, CEO">
-                    </div>
-                    <div class="team-content">
-                        <span class="team-role">CEO</span>
-                        <h3>S M Shahriar Minhaj</h3>
-                        <p>Leads the company vision, long-term strategy, and overall direction of Scaled Wires.</p>
-                    </div>
-                </div>
-                <div class="team-card scroll-animation">
-                    <div class="team-photo">
-                        <img src="photos/Faysal Ahmed Apu — COO.jpeg" alt="Faysal Ahmed Apu, COO">
-                    </div>
-                    <div class="team-content">
-                        <span class="team-role">COO</span>
-                        <h3>Faysal Ahmed Apu</h3>
-                        <p>Oversees operations, delivery flow, and the systems that keep teams moving efficiently.</p>
-                    </div>
-                </div>
-                <div class="team-card scroll-animation">
-                    <div class="team-photo">
-                        <img src="photos/Tasfiq Jahid — CFO.png" alt="Tasfiq Jahid, CFO">
-                    </div>
-                    <div class="team-content">
-                        <span class="team-role">CFO</span>
-                        <h3>Tasfiq Jahid</h3>
-                        <p>Guides financial planning, investment discipline, and sustainable business growth.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="about-cta">
-        <div class="container">
-            <div class="about-cta-box scroll-animation">
-                <h2>Need a team that can think and execute?</h2>
-                <p>Whether you are modernizing operations, launching a new digital initiative, or scaling customer-facing systems, Scaled Wires is built to help you move with more confidence and less friction.</p>
-                <a class="btn btn-primary" href="contact.html">Talk To Our Team</a>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>About Us</h4>
-                    <p>Scaled Wires is your trusted partner for comprehensive digital solutions and sustainable business growth.</p>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Solutions</h4>
-                    <ul>
-                        <li><a href="solutions.html">BPO Services</a></li>
-                        <li><a href="solutions.html">ATL / BTL Marketing</a></li>
-                        <li><a href="solutions.html">Web Development</a></li>
-                        <li><a href="solutions.html">Mobile Apps</a></li>
-                        <li><a href="solutions.html">Software Development</a></li>
-                        <li><a href="solutions.html">Sales Solutions</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
+            <div class="footer-grid">
+                <section>
+                    <h3 class="footer-title">Scaled Wires</h3>
+                    <p class="footer-muted">A growth execution partner for businesses that need speed and stability.</p>
+                </section>
+                <section>
+                    <h3 class="footer-title">Explore</h3>
+                    <ul class="footer-links">
                         <li><a href="about.html">About</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
                         <li><a href="expertise.html">Expertise</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
                     </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <div class="footer-contact">
-                        <p>shahriar.abir884@gmail.com</p>
-                        <p>+880 1326 884138</p>
-                        <p>Holding 3289, Road 68, Block L, Bashundhara R/A</p>
-                        <p>Mon-Fri: 9:00 AM - 6:00 PM EST</p>
-                    </div>
-                </div>
+                </section>
+                <section>
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:shahriar.abir884@gmail.com">shahriar.abir884@gmail.com</a></li>
+                        <li><a href="tel:+8801326884138">+880 1326 884138</a></li>
+                        <li><span class="footer-muted">Dhaka, Bangladesh</span></li>
+                    </ul>
+                </section>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 Scaled Wires. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-            </div>
+            <div class="footer-bottom">Copyright 2026 Scaled Wires. All rights reserved.</div>
         </div>
     </footer>
 
     <script>
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -80px 0px"
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("visible");
                     observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.15 });
 
-        document.querySelectorAll(".scroll-animation").forEach(function(el) {
-            observer.observe(el);
-        });
+        document.querySelectorAll(".scroll-animation").forEach((element) => observer.observe(element));
     </script>
 </body>
 </html>
+
+
